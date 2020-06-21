@@ -46,7 +46,7 @@ public class Employee {
 	@ApiModelProperty(value = "birthDate, Date of birth can't be Future date")
 	private Date birthDate;
 	
-	@OneToOne(fetch = FetchType.LAZY)
+	@OneToOne//(fetch = FetchType.LAZY)
 	@JsonIgnore
 	private Pan pan;
 	
