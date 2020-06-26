@@ -27,7 +27,7 @@ public class CompanyController {
 	@Autowired
 	private CompanyRepository companyRepo;
 	
-	@GetMapping(path = "/companies/{id}")
+	@GetMapping(path = "/companies/{id}/employees")
 	@ApiOperation(value = "Fetch All Employees of a Company")
 	public ResponseEntity<List<Employee>> retrieveAllEmployeesByCompanyId(@ApiParam(value = "Takes company Id")
 					@PathVariable int id){
