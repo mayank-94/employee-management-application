@@ -27,12 +27,19 @@ public class CompanyController {
 	@Autowired
 	private CompanyRepository companyRepo;
 	
-	@GetMapping(path = "/company/{id}")
+	@GetMapping(path = "/companies/{id}")
 	@ApiOperation(value = "Fetch All Employees of a Company")
 	public ResponseEntity<List<Employee>> retrieveAllEmployeesByCompanyId(@ApiParam(value = "Takes company Id")
 					@PathVariable int id){
 		
 		Optional<Company> company = companyRepo.findById(id);
 		return new ResponseEntity<List<Employee>>(company.get().getEmployee(), HttpStatus.OK);
+	}
+	
+	@GetMapping(path = "/companies/")
+	@ApiOperation(value = "Fetch All Companies")
+	public ResponseEntity<List<Company>> retrieveAllCompanies(){
+		
+		return new ResponseEntity<List<Company>>(companyRepo.findAll(), HttpStatus.OK);
 	}
 }
