@@ -7,6 +7,9 @@ import java.util.Optional;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -65,6 +68,26 @@ public class EmployeController {
 	public ResponseEntity<List<Employee>> getAllEmployees(){
 		
 		return new ResponseEntity<List<Employee>>(employeeRepo.findAll(), 
+				HttpStatus.OK);
+	}
+	
+	@GetMapping(path = "/employees/sorted")
+	@ApiOperation(value = "Get List of All Employees in Ascending Order")
+	public ResponseEntity<List<Employee>> getAllEmployeesSorted(){
+		
+		Sort sort = Sort.by(Sort.Direction.ASC, "deptName").and(Sort.by(Sort.Direction.DESC, "empName"));
+		return new ResponseEntity<List<Employee>>(employeeRepo.findAll(sort), 
+				HttpStatus.OK);
+	}
+	
+	@GetMapping(path = "/employees/paginated")
+	@ApiOperation(value = "Get List of All Employees in Pagination of 3")
+	public ResponseEntity<List<Employee>> getAllEmployeesPaginated(){
+		
+		PageRequest pageable = PageRequest.of(0, 3, Sort.by(Sort.Direction.ASC, "empName"));
+		Page<Employee> page = employeeRepo.findAll(pageable);
+		
+		return new ResponseEntity<List<Employee>>(page.getContent(), 
 				HttpStatus.OK);
 	}
 	
