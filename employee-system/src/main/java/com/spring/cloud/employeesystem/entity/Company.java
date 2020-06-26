@@ -1,14 +1,18 @@
 package com.spring.cloud.employeesystem.entity;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -36,8 +40,9 @@ public class Company {
 	@Size(min = 2, message = "Company should have minimum 2 employees")
 	private int numOfEmployees;
 	
-	@OneToMany(mappedBy = "company")
-	private List<Employee> employee;
+	@OneToMany(mappedBy = "company", fetch = FetchType.LAZY)
+	@JsonIgnore
+	private List<Employee> employee = new ArrayList<Employee>();
 
 	public Company() {
 		super();

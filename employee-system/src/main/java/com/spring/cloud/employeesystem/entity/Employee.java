@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.validation.constraints.NotNull;
@@ -46,12 +47,14 @@ public class Employee {
 	@ApiModelProperty(value = "birthDate, Date of birth can't be Future date")
 	private Date birthDate;
 	
-	@OneToOne//(fetch = FetchType.LAZY)
+	@OneToOne
 	@JsonIgnore
+	@JoinColumn(name = "pan_id")
 	private Pan pan;
 	
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JsonIgnore
+	@JoinColumn(name = "comp_id")
 	private Company company;
 		
 	public Employee() {
