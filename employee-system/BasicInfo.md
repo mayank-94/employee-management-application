@@ -16,6 +16,9 @@
  	  
 #By default, spring framework searches for application.properties or application.yml file in the class-path.
 
+#Dependency Injection is the feature by which Spring framework find the beans, searches for their dependencies and
+	autowires them using @Autowired.
+
 #REST HTTP STATUS CODES
  - 200 : Successful Get
  - 201 : Successful Post
@@ -66,7 +69,8 @@ Note - Service and Repository are special forms of Component, used for specific 
  - @ControllerAdvice : It provides centralized exception handler across the application on RequestMapping methods
  	using the annotation @ExceptionHandler.
  	
-#SPRING BOOT ACTUATOR - 
+#SPRING BOOT ACTUATOR :
+ 
 It is a production ready feature. It helps in managing and monitor our application using http endpoints. 
 By default, it runs on the same port as our application, but we can override it using the property. 
 It runs on the path /actuator, but we can override it using the property.
@@ -75,4 +79,8 @@ As endpoints expose sensitive information, we need to make sure which endpoints 
  - management.server.port
  - management.endpoints.web.base-path
  - management.endpoints.web.exposure.include=info, metric, health
+ 
+ #SPRING BOOT DEVTOOLS : 
+ It is a feature used in development, in production it is disabled by default. Applications that uses this feature
+ are automatically restarted as soon as files on class path change.
  	
