@@ -67,12 +67,12 @@ Note - Service and Repository are special forms of Component, used for specific 
  	using the annotation @ExceptionHandler.
  	
 #SPRING BOOT ACTUATOR - 
-	It is a production ready feature. It helps in managing and monitor our application using http endpoints. By default,
-	it runs on the same port as our application, but we can override it using the property, 
-	- management.server.port
-	
-it runs on the path /actuator, but we can override it using the property,
-	- management.endpoints.web.base-path
-	As endpoints expose sensitive information, we need to make sure which endpoints we want to expose,
-	- management.endpoints.web.exposure.include=info, metric, health
+It is a production ready feature. It helps in managing and monitor our application using http endpoints. 
+By default, it runs on the same port as our application, but we can override it using the property. 
+It runs on the path /actuator, but we can override it using the property.
+As endpoints expose sensitive information, we need to make sure which endpoints we want to expose.
+ 
+ - management.server.port
+ - management.endpoints.web.base-path
+ - management.endpoints.web.exposure.include=info, metric, health
  	
