@@ -17,6 +17,7 @@
    we will add the annotation, @EnableEurekaSever. 
    
 #We don't want our server application to register itself so inside the application.properties - 
+
    eureka.client.register-with-eureka=false
    eureka.client.fetch-registry=false   
    
