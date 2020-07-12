@@ -80,7 +80,7 @@ As endpoints expose sensitive information, we need to make sure which endpoints 
  - management.endpoints.web.base-path
  - management.endpoints.web.exposure.include=info, metric, health
  
- #SPRING BOOT DEVTOOLS : 
- It is a feature used in development, in production it is disabled by default. Applications that uses this feature
- are automatically restarted as soon as files on class path change.
+ #SPRING BOOT DEVTOOLS :
+ 	It is a feature used in development, in production it is disabled by default. Applications that uses this feature
+ 	are automatically restarted as soon as files on class path change.
  	
