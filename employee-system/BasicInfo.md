@@ -13,6 +13,9 @@
 #SpringFramework provides two IOC container implementations i.e BeanFactory and ApplicationContext. BeanFactory does 
 	lazy loading, it loads the beans on demand whereas ApplicationContext does eager loading, it loads all the beans
 	on startup. 
+	
+#ApplicationContext is an interface that maintains the registry of beans and their dependencies. The getBean() method
+	is used to find the bean, it's return type is Object, we need to type it into the desired bean.
  	  
 #By default, spring framework searches for application.properties or application.yml file in the class-path.
 
@@ -69,6 +72,9 @@ Note - Service and Repository are special forms of Component, used for specific 
  - @ControllerAdvice : It provides centralized exception handler across the application on RequestMapping methods
  	using the annotation @ExceptionHandler.
  	
+#ResponseEntity represents the HTTP response, it is used to add headers and specific status codes for the particular
+	HTTP Method.
+ 	
 #SPRING BOOT ACTUATOR :
  
 It is a production ready feature. It helps in managing and monitor our application using http endpoints. 
@@ -81,6 +87,7 @@ As endpoints expose sensitive information, we need to make sure which endpoints 
  - management.endpoints.web.exposure.include=info, metric, health
  
  #SPRING BOOT DEVTOOLS :
- 	It is a feature used in development, in production it is disabled by default. Applications that uses this feature
- 	are automatically restarted as soon as files on class path change.
+ 
+ It is a feature used in development, in production it is disabled by default. Applications that uses this feature
+ are automatically restarted as soon as files on class path change.
  	
