@@ -1,3 +1,19 @@
+#Hibernate is an ORM(Object Relational mapping) framework. It's primary task is to map Java Objects with
+	database tables. It is an implementation of JPA. 
+	
+#A JPA repository is created in this manner - 
+	
+	@Repository
+	public interface BookRepository extends JpaRepository<Book, Integer>{
+	}
+	
+#JpaRepository extends PagingAndSortingRepository and it extends CrudRepository. CrudRepository provides
+	simple CRUD operations, PagingAndSortingRepository provides paging and sorting methods.
+	
+	
+
+#Few JPA related annotations- 
+
 #Problems occurred during concurrent transactions - 
  - Dirty Read: It occurs when one transaction reads data that is being modified by another transaction and has
  	not been committed by the first transaction.
