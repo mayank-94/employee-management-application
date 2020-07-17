@@ -26,11 +26,11 @@
  - SINGLE_TABLE : A single table is created for all the sub-classes and parent class and an additional column
  	get added i.e D_TYPE, that represents that sub-class entity. It can be customized using the annotation @DiscriminatorColumn.
  	
- 	@Entity
- 	@Inheritance(Strategy = InheritanceType.SINGLE_TABLE)
- 	@DiscriminatorColumn(name="Employee_Type"
- 	public class Employee{
- 	}
+	 	@Entity
+	 	@Inheritance(Strategy = InheritanceType.SINGLE_TABLE)
+	 	@DiscriminatorColumn(name="Employee_Type"
+	 	public class Employee{
+	 	}
  	  
 
 #Problems occurred during concurrent transactions - 
