@@ -7,12 +7,31 @@
 	public interface BookRepository extends JpaRepository<Book, Integer>{
 	}
 	
+#Basic JPA annotations:
+ - @Entity : It marks the class as a JPA entity, i.e it will be managed by EntityManager.
+ - @Id : It marks the primary key of the table.
+ - @GeneratedValue : It means hibernate will create the value of that attribute, usually Primary key is marked with this.
+	
 #JpaRepository extends PagingAndSortingRepository and it extends CrudRepository. CrudRepository provides
 	simple CRUD operations, PagingAndSortingRepository provides paging and sorting methods.
 	
+	Sort sort = Sort.By(Sort.DIRECTION.ASC, "empName");
+	List<Employee> employees = repo.findAll(sort);
 	
+	PageRequest pageable = PageRequest.of(pgNum, pgSize, <sort>)
+	Page<Employee> page = repo.findAll(pageable);
+	return page.getContent();
 
-#Few JPA related annotations- 
+#Inheritance in JPA:
+ - SINGLE_TABLE : A single table is created for all the sub-classes and parent class and an additional column
+ 	get added i.e D_TYPE, that represents that sub-class entity. It can be customized using the annotation @DiscriminatorColumn.
+ 	
+ 	@Entity
+ 	@Inheritance(Strategy = InheritanceType.SINGLE_TABLE)
+ 	@DiscriminatorColumn(name="Employee_Type"
+ 	public class Employee{
+ 	}
+ 	  
 
 #Problems occurred during concurrent transactions - 
  - Dirty Read: It occurs when one transaction reads data that is being modified by another transaction and has
