@@ -50,6 +50,12 @@
  
  - @Qualifier : When you have more than  one bean of the same type and you want to choose a particular bean.
  
+ - @Order : It defines the sorting order of the beans. Spring will inject the auto-wired beans of the same type
+ 	in their sorting order. They need to be Autowired as a List or Array.
+ 	
+ - @Primary : When you have more than one bean of the same type and you want to set any one bean as the default bean.
+ 	If we don't do that, the spring compiler will get confuse that which bean to auto-wire and it will throw an exception.
+ 
  - @Repository : It means the class or interface will provide a mechanism for update, delete, storage or retrieval of 
  	objects, basically it will deal with the database.
  	
