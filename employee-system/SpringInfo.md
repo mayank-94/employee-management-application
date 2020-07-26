@@ -1,26 +1,34 @@
 #Spring Boot is a spring module which aims to simplify the spring framework. It helps in developing stand alone Java
 	applications. It has embedded server in it. It feature AutoConfiguration solves the problem of manual configuration
 	of beans in XML file, so classes that are present in class-path are automatically configured by spring boot.
+
 	
 #Spring Boot runs on port 8080 by default, but it can be overridden using property server.port
 
+
 #SpringApplication.run() - It bootstraps the spring application from the main method as a stand alone application
 	and creates Application context that loads beans.
+
 	
 #Spring Beans are Java object that are managed by spring container. Spring container is responsible for instantiating, 
 	configuring and assembling the beans. It also manages the life cycle of the beans.
+
 	
 #SpringFramework provides two IOC container implementations i.e BeanFactory and ApplicationContext. BeanFactory does 
 	lazy loading, it loads the beans on demand whereas ApplicationContext does eager loading, it loads all the beans
 	on startup. 
+
 	
 #ApplicationContext is an interface that maintains the registry of beans and their dependencies. The getBean() method
 	is used to find the bean, it's return type is Object, we need to type it into the desired bean.
+
  	  
 #By default, spring framework searches for application.properties or application.yml file in the class-path.
 
+
 #Dependency Injection is the feature by which Spring framework find the beans, searches for their dependencies and
 	autowires them using @Autowired.
+
 
 #REST HTTP STATUS CODES
  - 200 : Successful Get
@@ -28,8 +36,9 @@
  - 204 : Successful Delete
  - 404 : Resource Not Found
  - 400 : Bad Request
- - 401 : Forbidden
+ - 403 : Forbidden
  - 500 : Internal Server Error
+ 
  
  #Few Important Annotations:
  - @SpringBootApplication : Marks the entry point of the application, it is composed of @Configuration, 
@@ -78,8 +87,10 @@ Note - Service and Repository are special forms of Component, used for specific 
  - @ControllerAdvice : It provides centralized exception handler across the application on RequestMapping methods
  	using the annotation @ExceptionHandler.
  	
+ 	
 #ResponseEntity represents the HTTP response, it is used to add headers and specific status codes for the particular
 	HTTP Method.
+ 
  	
 #SPRING BOOT ACTUATOR :
  
@@ -92,7 +103,8 @@ As endpoints expose sensitive information, we need to make sure which endpoints 
  - management.endpoints.web.base-path
  - management.endpoints.web.exposure.include=info, metric, health
  
- #SPRING BOOT DEVTOOLS :
+
+#SPRING BOOT DEVTOOLS :
  
  It is a feature used in development, in production it is disabled by default. Applications that uses this feature
  are automatically restarted as soon as files on class path change.
