@@ -27,7 +27,8 @@
 	
 	
 #Custom Method for searching and deleting by specific attribute : 
- - @Repository
+  
+   @Repository
    public interface BookRepository extends JpaRepository<Book, Integer>{
    List<Book> findByAuthor(String author);	
    }
