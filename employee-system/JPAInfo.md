@@ -26,7 +26,7 @@
 	- repo.save()
 	
 	
-#Custom Method for searching and deleting by specific attribute : 
+#Custom Method for searching and deleting by specific attribute - 
   
    @Repository
    public interface BookRepository extends JpaRepository<Book, Integer>{
