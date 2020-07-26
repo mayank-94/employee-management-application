@@ -30,7 +30,7 @@
   
    @Repository
    public interface BookRepository extends JpaRepository<Book, Integer>{
-   List<Book> findByAuthor(String author);	
+   		List<Book> findByAuthor(String author);
    }
    
   findBy or queryBy, can be used to search by any other attribute defined in Entity, provided there should be a 
