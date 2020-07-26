@@ -14,12 +14,33 @@
 	public interface BookRepository extends JpaRepository<Book, Integer>{
 	}
 	
+#JPA Repositories methods used in CRUD Operations : 
+	- repo.findById()
+	- repo.findAll()
+	- repo.deleteById()
+	- repo.save()
+	
+#Custom Method for searching and deleting by specific attribute : 
+	- @Repository
+	  public interface BookRepository extends JpaRepository<Book, Integer>{
+	  	List<Book> findByAuthor(String author);	
+	  }
+	  findBy or queryBy, can be used to search by any other attribute defined in Entity, provided there should be a 
+	  field in Entity whose name should exactly matches with anything comes after findBy or queryBy or even deleteBy -
+	  Here, Book should have an attribute named "author"
+	
 #Basic JPA annotations:
  - @Entity : It marks the class as a JPA entity, i.e it will be managed by EntityManager.
  - @Id : It marks the primary key of the table.
  - @GeneratedValue : It means hibernate will create the value of that attribute, usually Primary key is marked with this.
  - @Table : It maps the table name of database with the entity name.
  - @Column : It maps the column name of the table with the name of the field of an entity.
+ 
+#Few Properties:
+	spring.jpa.hibernate.ddl-auto=update (will create the table automatically with the mapped Entity if doesn't exist)
+	spring.jpa.show-sql=true (will show the sql fired for a particular method by JPA)
+	spring.jpa.properties.hibernate.dialect (For setting the SQL Dialect you are using)
+	spring.jpa.properties.hibernate.format_sql=true (Not advised to use in production) 
 	
 #JpaRepository extends PagingAndSortingRepository and it extends CrudRepository. CrudRepository provides
 	simple CRUD operations, PagingAndSortingRepository provides paging and sorting methods.
