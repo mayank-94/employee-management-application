@@ -27,13 +27,13 @@
 	
 	
 #Custom Method for searching and deleting by specific attribute : 
-	- @Repository
-	  public interface BookRepository extends JpaRepository<Book, Integer>{
-	  	List<Book> findByAuthor(String author);	
-	  }
-	  findBy or queryBy, can be used to search by any other attribute defined in Entity, provided there should be a 
-	  field in Entity whose name should exactly matches with anything comes after findBy or queryBy or even deleteBy -
-	  Here, Book should have an attribute named "author"
+ - @Repository
+   public interface BookRepository extends JpaRepository<Book, Integer>{
+   List<Book> findByAuthor(String author);	
+   }
+  findBy or queryBy, can be used to search by any other attribute defined in Entity, provided there should be a 
+  field in Entity whose name should exactly matches with anything comes after findBy or queryBy or even deleteBy -
+  Here, Book should have an attribute named "author"
 
 	
 #Basic JPA annotations:
