@@ -16,10 +16,18 @@
 	#So the question comes how many requests we need to trace, we don't want to overwhelm our logging infrastructure.
 	By default the threshold is set for 10%. But we can override it using the property - 
 	
-		#spring.sleuth.sampler.probability=0.2 
+		#spring.sleuth.sampler.probability=0.2 (now, 20% of the requests will be logged) 
+		
+	#We can even define a sampler bean as below instead of property - 
+		
+		@Bean
+		public Sampler defaultSampler(){
+			return Sampler.ALWAYS_SAMPLE
+		}
 		
 	#Zipkin can be started as a server - 
 		java -jar zipkin.jar
 	By default, zipkin runs on the port 9411, so now if we hit any url of our application, the zipkin will have a trace.  
+		http://localhost:9411/zipkin
 		
 	
