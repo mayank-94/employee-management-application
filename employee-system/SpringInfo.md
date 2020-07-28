@@ -118,7 +118,9 @@ As endpoints expose sensitive information, we need to make sure which endpoints 
  		
  - Request Parameter Version : using params attribute
  		
+ 		- @GetMapping(value="/users", params="version1")
  		- http://localhost:8080/users?version1
+ 		- @GetMapping(value="/users", params="version2")
  		- http://localhost:8080/users?version2
  		
  - Header Version : using headers attribute 
@@ -127,4 +129,7 @@ As endpoints expose sensitive information, we need to make sure which endpoints 
  		- @GetMaping(value="/users", headers="X-API-VERSION=2")
  		
  - MediaType Version : using produces attribute and Accept header while hitting request
+ 
+ 		- @GetMapping(value="/users", produces="application/mycompany.app-v1+json")
+ 		- @GetMapping(value="/users", produces="application/mycompany.app-v2+json")
  	
