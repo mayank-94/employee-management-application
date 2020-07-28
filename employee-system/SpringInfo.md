@@ -112,9 +112,19 @@ As endpoints expose sensitive information, we need to make sure which endpoints 
 
 #API Versioning : 
  - URI Version : using different URIs
+ 
  		- http://localhost:8080/v1/users
  		- http://localhost:8080/v2/users
+ 		
  - Request Parameter Version : using params attribute
+ 		
+ 		- http://localhost:8080/users?version1
+ 		- http://localhost:8080/users?version2
+ 		
  - Header Version : using headers attribute 
+ 
+ 		- @GetMaping(value="/users", headers="X-API-VERSION=1")
+ 		- @GetMaping(value="/users", headers="X-API-VERSION=2")
+ 		
  - MediaType Version : using produces attribute and Accept header while hitting request
  	
