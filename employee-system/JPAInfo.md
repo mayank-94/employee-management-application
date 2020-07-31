@@ -81,6 +81,19 @@
  			@OneToOne(mappedBy="pan", fetch="FetchType.LAZY")
  			private Employee employee; 
  		}
+ 		
+ 		@Entity
+ 		public class Company{
+ 			@OneToMany(fetch=FetchType.LAZY, mappedBy="company")
+ 			private List<Employee> employees = new ArrayList<>();
+ 		}
+ 		@Entity
+ 		public class Employee{
+ 			@ManyToOne(fetch=FetchType.LAZY)
+ 			private Company company;
+ 		}
+ 		Employee own the relationship, so mappedBy attribute will be used inside Company Entity.
+ 		
 
 
 #Embeddable vs Embedded - 
