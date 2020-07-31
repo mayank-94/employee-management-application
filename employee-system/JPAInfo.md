@@ -69,6 +69,18 @@
  - @OneToMany : Company To Employee
  - @ManyToOne : Employee To Company
  - @ManyToMany : Course To Reviews	
+ 
+ 		@Entity
+ 		public class Employee{
+ 			@OneToOne
+ 			private Pan pan;
+ 		}
+ 		Now Employee is owning the relationship. If we want Bidirectional relationship - 
+ 		@Entity
+ 		public class Pan{
+ 			@OneToOne(mappedBy="pan", fetch="FetchType.LAZY")
+ 			private Employee employee; 
+ 		}
 
 
 #Embeddable vs Embedded - 
