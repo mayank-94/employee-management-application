@@ -81,6 +81,7 @@
  			@OneToOne(mappedBy="pan", fetch="FetchType.LAZY")
  			private Employee employee; 
  		}
+ 		FetchType - LAZY, it means Pan will not fetch details of employee by default unless called explicitly. 
  		
  		@Entity
  		public class Company{
@@ -92,7 +93,7 @@
  			@ManyToOne(fetch=FetchType.LAZY)
  			private Company company;
  		}
- 		Employee own the relationship, so mappedBy attribute will be used inside Company Entity.
+ 		Employee owns the relationship, so mappedBy attribute will be used inside Company Entity.
  		
 
 
