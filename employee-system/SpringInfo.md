@@ -90,7 +90,23 @@ Note - Service and Repository are special forms of Component, used for specific 
  	
 #ResponseEntity represents the HTTP response, it is used to add headers and specific status codes for the particular
 	HTTP Method.
- 
+	
+	
+#HttpHeaders : It represents HTTP Request and Response headers. It maps String name with the value. We can use
+	HttpServletResponse or ResponseEntity to add headers.
+ 		@GetMapping(path="/servlet-response")
+		public String usingServletResponse(HttpServletResponse response){
+			response.addHeader("Header-Name", "Servlet Response Header");
+			return "Servlet Response";
+		}
+		
+		@GetMapping(path="/response-entity")
+		public ResponseEntity<String> usingResponseEntity(){
+			HttpHeaders header = new HttpHeader();
+			header.add("Header-Name", "Response Entity Header");
+			return new ResponseEntity<String>("ResponseEntity", header, HttpStatus.OK);
+		}
+		 		
  	
 #SPRING BOOT ACTUATOR :
  
