@@ -94,6 +94,7 @@ Note - Service and Repository are special forms of Component, used for specific 
 	
 #HttpHeaders : It represents HTTP Request and Response headers. It maps String name with the value. We can use
 	HttpServletResponse or ResponseEntity to add headers.
+	
  		@GetMapping(path="/servlet-response")
 		public String usingServletResponse(HttpServletResponse response){
 			response.addHeader("Header-Name", "Servlet Response Header");
