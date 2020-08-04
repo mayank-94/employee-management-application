@@ -103,7 +103,7 @@ Note - Service and Repository are special forms of Component, used for specific 
 		
 		@GetMapping(path="/response-entity")
 		public ResponseEntity<String> usingResponseEntity(){
-			HttpHeaders header = new HttpHeader();
+			HttpHeaders header = new HttpHeaders();
 			header.add("Header-Name", "Response Entity Header");
 			return new ResponseEntity<String>("ResponseEntity", header, HttpStatus.OK);
 		}
