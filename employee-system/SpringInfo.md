@@ -7,7 +7,7 @@
 
 
 #SpringApplication.run() - It bootstraps the spring application from the main method as a stand alone application
-	and creates Application context that loads beans.
+	and creates Application context that loads beans. It also runs the embedded tomcat server.
 
 	
 #Spring Beans are Java object that are managed by spring container. Spring container is responsible for instantiating, 
@@ -18,7 +18,11 @@
 	lazy loading, it loads the beans on demand whereas ApplicationContext does eager loading, it loads all the beans
 	on startup. 
 
-	
+
+#Spring Boot Dependency Management is used to manage dependencies and configurations automatically without
+	specifying the versions of dependencies.	
+
+
 #ApplicationContext is an interface that maintains the registry of beans and their dependencies. The getBean() method
 	is used to find the bean, it's return type is Object, we need to type it into the desired bean.
 
@@ -31,13 +35,14 @@
 
 
 #REST HTTP STATUS CODES
- - 200 : Successful Get
- - 201 : Successful Post
- - 204 : Successful Delete
- - 404 : Resource Not Found
- - 400 : Bad Request
- - 403 : Forbidden
- - 500 : Internal Server Error
+ - 200 : Successful Get/OK
+ - 201 : Successful Post/CREATED
+ - 204 : Successful Delete/NO_CONTENT
+ - 404 : Resource Not Found/NOT_FOUND
+ - 400 : Bad Request/BAD_REQUEST
+ - 403 : Forbidden/FORBIDDEN
+ - 401 : UnAuthorized/UNAUTHORIED
+ - 500 : Internal Server Error/INTERNAL_SERER_ERROR
  
  
  #Few Important Annotations:
@@ -87,6 +92,9 @@ Note - Service and Repository are special forms of Component, used for specific 
  - @ControllerAdvice : It provides centralized exception handler across the application on RequestMapping methods
  	using the annotation @ExceptionHandler.
  	
+
+#@GetMapping is a short hand of @Requestmapping(method = RequestMethod.Get)
+
  	
 #ResponseEntity represents the HTTP response, it is used to add headers and specific status codes for the particular
 	HTTP Method.
@@ -119,6 +127,9 @@ As endpoints expose sensitive information, we need to make sure which endpoints 
  - management.server.port
  - management.endpoints.web.base-path
  - management.endpoints.web.exposure.include=info, metric, health
+ 
+ - shutdown : It is an endpoint that lets you gracefully shutdown the application. By default it is disabled.
+ 	management.endpoint.shutdown.enabled=true 
  
 
 #SPRING BOOT DEVTOOLS :
