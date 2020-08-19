@@ -1,5 +1,5 @@
 #Spring Boot is a spring module which aims to simplify the spring framework. It helps in developing stand alone Java
-	applications. It has embedded server in it. It feature AutoConfiguration solves the problem of manual configuration
+	applications. It has embedded server in it. It's feature AutoConfiguration solves the problem of manual configuration
 	of beans in XML file, so classes that are present in class-path are automatically configured by spring boot.
 
 	
