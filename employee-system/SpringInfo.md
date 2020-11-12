@@ -1,4 +1,4 @@
-# Spring Boot is a spring module which aims to simplify the spring framework. It helps in developing stand alone Java
+#Spring Boot is a spring module which aims to simplify the spring framework. It helps in developing stand alone Java
 	applications. It has embedded server in it. It's feature AutoConfiguration solves the problem of manual configuration
 	of beans in XML file, so classes that are present in class-path are automatically configured by spring boot.
 
@@ -41,7 +41,22 @@
 #Different Bean scopes - singleton, prototype, request, session.
 
 
+#Different Http Methods : Get, Post, Put, Delete, Patch, Options, Head, Trace
 
+
+#Get requests can be cached, bookmarked and they have length constraints. Post requests can't be cached and bookmarked
+	and there is no length constraints on Post.
+	
+
+#An HTTP method is called a safe method if it does not alter the state of the server. Basically a method is read-only.
+	GET, HEAD or OPTIONS are safe.
+	
+	
+#An HTTP method is Idempotent if called multiple times will produce the same result. Get, Put, Delete, Head
+	
+	
+#The main difference between Post and Put is that Put requests are Idempotent which means it produces the same result
+	when same request is send multiple times whereas Post will create a new resource each time which will duplicate the data.
 
 
 #REST HTTP STATUS CODES
