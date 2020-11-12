@@ -1,4 +1,4 @@
-#Spring Boot is a spring module which aims to simplify the spring framework. It helps in developing stand alone Java
+# Spring Boot is a spring module which aims to simplify the spring framework. It helps in developing stand alone Java
 	applications. It has embedded server in it. It's feature AutoConfiguration solves the problem of manual configuration
 	of beans in XML file, so classes that are present in class-path are automatically configured by spring boot.
 
@@ -32,6 +32,16 @@
 
 #Dependency Injection is the feature by which Spring framework find the beans, searches for their dependencies and
 	autowires them using @Autowired.
+	
+
+#Default Bean scope is Singleton, which means a single instance of a class is available in the application. Prototype bean scope 
+	means a new object is created whenever an instance of the class is invoked.
+
+
+#Different Bean scopes - singleton, prototype, request, session.
+
+
+
 
 
 #REST HTTP STATUS CODES
