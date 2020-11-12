@@ -8,7 +8,7 @@
 
 	
 #EntityManager : It manages persistence objects i.e entities It is an interface to PersistenceContext and helps
-	us connect to the database.  
+	us connect to the database. It simply gives you the current session.
 
 	
 #A JPA repository is created in this manner - 
